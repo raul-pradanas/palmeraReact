@@ -1,17 +1,9 @@
-import React from "react";
+import React , {useState} from "react";
 import styles from "./ProductCard.module.css";
 
 const ProductCard = (props) => {
   const { id, nombre, peso, precio, imagen } = props.producto;
-  let unidades = 0;
-
-  function aumentaUnidades(){
-    unidades = unidades + 1;
-  }
-
-  function disminuyeUnidades(){
-    unidades = unidades - 1;
-  }
+  const [count, setCount] = useState(0);
 
   return (
     <div className={styles.flexContainer}>
@@ -19,28 +11,28 @@ const ProductCard = (props) => {
       <span className={styles.producto}>{nombre}</span>
       <span className={styles.peso}>Pieza de {peso}g</span>
       <span className={styles.precioEntero}>
-        <span> {precio}€</span>
+        <span className={styles.precio}> {precio}€</span>
         <span> /ud.</span>
       </span>
-      { unidades < 1 && (
-      <button className={styles.boton} type="button" onClick={aumentaUnidades()}>
+      { count < 1 && (
+      <button className={styles.boton} type="button" onClick={() => setCount(count + 1)}>
         Añadir al carro
       </button>
       )}
-      {unidades > 0 && (
+      { count > 0 && (
         <div className={styles.flexRow}>
           <div className={styles.flexCompra}>
             <span className={styles.enCarro}> En carro </span>
-            <span className={styles.unidadesEnCarro}>
-              <span>{unidades}</span>
+            <span className={styles.unidadesCarro}>
+              <span>{count}</span>
               <span> ud.</span>
             </span>
           </div>
           <div className={styles.flexBotones}>
-            <button className={styles.botonAñadirUnidad} type="button" onClick = {aumentaUnidades()}>
+            <button className={styles.botonAñadirUnidad} type="button" onClick={() => setCount(count + 1)}>
               +ud
             </button>
-            <button className={styles.botonElininarUnidad} type="button" onClick = {disminuyeUnidades()}>
+            <button className={styles.botonElininarUnidad} type="button" onClick={() => setCount(count - 1)}>
               -ud
             </button>
           </div>
