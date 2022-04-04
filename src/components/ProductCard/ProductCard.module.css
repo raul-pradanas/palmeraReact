@@ -1,0 +1,67 @@
+.flexContainer{
+    height: 490px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-style: outset;
+}
+
+.flexRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.flexCompra{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.flexBotones{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+.imagen{
+    height: 250px;
+    width: 250px;
+}
+
+.producto{
+    margin-left: 5px;
+    font-size: 26px;
+}
+
+.peso{
+    margin-left: 5px;
+    font-size: 18px;
+    color: darkgray;
+}
+
+.boton{
+    width: 100%;
+    align-self: center;
+}
+
+.precioEntero{
+    margin-top: 65px;
+}
+
+.enCarro{
+    margin-left: 5px;
+}
+
+.unidadesCarro{
+    margin-left: 5px;
+}
